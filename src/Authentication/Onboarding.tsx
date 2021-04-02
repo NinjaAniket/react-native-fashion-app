@@ -31,28 +31,28 @@ const slides = [
     color: "#BFEAF5",
     title: "Your Style",
     subtitle: "Cool Style to Get Relaxed is super cool",
-    picture: require("../../../assets/img/1.jpg"),
+    picture: require("../../assets/img/1.jpg"),
   },
   {
     label: "Playful",
     color: "#BEECC4",
     title: "Your Style",
     subtitle: "Cool Style to Get Relaxed is super cool",
-    picture: require("../../../assets/img/2.jpg"),
+    picture: require("../../assets/img/2.jpg"),
   },
   {
     label: "Eccentric",
     color: "#FFE4D9",
     title: "Your Style",
     subtitle: "Cool Style to Get Relaxed is super cool",
-    picture: require("../../../assets/img/3.jpg"),
+    picture: require("../../assets/img/3.jpg"),
   },
   {
     label: "Funky",
     color: "#FFDDDD",
     title: "Your Style",
     subtitle: "Cool Style to Get Relaxed is super cool",
-    picture: require("../../../assets/img/4.jpg"),
+    picture: require("../../assets/img/4.jpg"),
   },
 ];
 

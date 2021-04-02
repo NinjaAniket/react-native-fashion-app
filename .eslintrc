@@ -1,0 +1,7 @@
+{
+    "extends": "react-native-wcandillon", 
+    "lint": "eslint --ext .ts,.tsx . --max-warnings 0",
+    "tsc": "tsc --noEmit",
+    "test": "jest",
+    "ci": "yarn lint && yarn tsc && yarn test"
+}

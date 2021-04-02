@@ -1,8 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Animated from "react-native-reanimated";
-import { CustomBtn } from "../components/index";
-
+import { CustomBtn, Text } from "../components/index";
 interface SubtitleProps {
   title: string;
   subtitle: string;
@@ -18,7 +17,7 @@ export default function Subslide({
 }: SubtitleProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text variant="title1">{title}</Text>
       <Text style={styles.subtitle}>{subtitle}</Text>
       {/* <Text>{last}</Text> */}
       {/* <Text>{x}</Text> */}
