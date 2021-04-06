@@ -1,30 +1,28 @@
 import * as React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
-import { Onboarding } from "./src/Authentication";
+import {
+  assets as AuthenticationAssets,
+  AuthenticationNavigation,
+} from "./src/Authentication";
 import { LoadAssets, theme } from "./src/components";
 import { StatusBar } from "react-native";
 import { ThemeProvider } from "@shopify/restyle";
-
-const AuthenticationStack = createStackNavigator();
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const fonts = {
   "OpenSans-Regular": require("./assets/fonts/OpenSans-Regular.ttf"),
   "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
 };
 
-const AuthentecationNavigation = () => {
-  return (
-    <AuthenticationStack.Navigator headerMode={"none"}>
-      <AuthenticationStack.Screen name="Onboarding" component={Onboarding} />
-    </AuthenticationStack.Navigator>
-  );
-};
+const assets = [...AuthenticationAssets];
+
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <LoadAssets {...{ fonts }}>
-        <StatusBar hidden />
-        <AuthentecationNavigation />
+      <LoadAssets {...{ fonts, assets }}>
+        <SafeAreaProvider>
+          <StatusBar hidden />
+          <AuthenticationNavigation />
+        </SafeAreaProvider>
       </LoadAssets>
     </ThemeProvider>
   );

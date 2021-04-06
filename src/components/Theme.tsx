@@ -1,4 +1,4 @@
-import { BaseTheme, createText } from "@shopify/restyle";
+import { createText, createBox } from "@shopify/restyle";
 
 const palette = {
   purpleLight: "#8C6FF7",
@@ -11,21 +11,30 @@ const palette = {
 
   black: "#0B0B0B",
   white: "#F0F2F3",
-  navyBlue: "#0C0D34",
+  secondary: "#0C0D34",
 
   primary: "#2cb9b0",
   body: "rgba(12, 13, 52, 0.7)",
   lightGray: "#2cb9b0",
+  darkGrey: "#8A8D90",
+  danger: "#FF0058",
 };
 
-const theme: BaseTheme = {
+const theme = {
   colors: {
     mainBackground: palette.white,
     cardPrimaryBackground: palette.purplePrimary,
-    titleColor: palette.navyBlue,
+    titleColor: palette.secondary,
     primaryColor: palette.primary,
     text: "rgba(12, 13, 52, 0.7)",
     lightGray: palette.lightGray,
+    grey: "#f5f5f5",
+    red: "red",
+    "slide-grey": "red",
+    white: "#fff",
+    secondaryColor: palette.secondary,
+    darkGrey: palette.darkGrey,
+    danger: palette.danger,
   },
   textVariants: {
     hero: {
@@ -51,12 +60,23 @@ const theme: BaseTheme = {
       fontFamily: "OpenSans-Regular",
       color: "text",
     },
+    button: {
+      fontSize: 15,
+      fontFamily: "OpenSans-Regular",
+      color: "text",
+    },
   },
   spacing: {
     s: 8,
     m: 16,
     l: 24,
     xl: 40,
+  },
+  borderRadii: {
+    s: 4,
+    m: 10,
+    l: 25,
+    xl: 75,
   },
   breakpoints: {
     phone: 0,
@@ -65,5 +85,6 @@ const theme: BaseTheme = {
 };
 
 export type Theme = typeof theme;
+export const Box = createBox<Theme>();
 export const Text = createText<Theme>();
 export default theme;
