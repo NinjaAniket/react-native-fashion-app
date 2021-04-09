@@ -25,7 +25,7 @@ const theme = {
     mainBackground: palette.white,
     cardPrimaryBackground: palette.purplePrimary,
     titleColor: palette.secondary,
-    primaryColor: palette.primary,
+    primary: palette.primary,
     text: "rgba(12, 13, 52, 0.7)",
     lightGray: palette.lightGray,
     grey: "#f5f5f5",
