@@ -4,3 +4,4 @@ export { default as theme, Text } from "./Theme";
 export { default as Container } from "./Container";
 export { default as ClosedButton } from "./CloseButton";
 export { default as RoundedIcon } from "./RoundedIcon";
+export { default as Header } from "./Header";

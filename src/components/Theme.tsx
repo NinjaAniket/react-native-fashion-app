@@ -65,6 +65,12 @@ const theme = {
       fontFamily: "OpenSans-Regular",
       color: "text",
     },
+    header: {
+      fontSize: 12,
+      fontFamily: "OpenSans-Bold",
+      color: "secondaryColor",
+      lineHeight: 24,
+    },
   },
   spacing: {
     s: 8,

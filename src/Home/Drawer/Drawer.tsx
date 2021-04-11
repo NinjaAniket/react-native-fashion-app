@@ -1,7 +1,9 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet } from "react-native";
-import { Box } from "../../components/Theme";
-import DrawerItem from "./DrawerItem";
+import { Header, RoundedIcon } from "../../components";
+import RoundedIconButton from "../../components/RoundedIconButton";
+import theme, { Box, Text } from "../../components/Theme";
+import DrawerItem, { DrawerItemProps } from "./DrawerItem";
 
 const { width } = Dimensions.get("window");
 
@@ -11,9 +13,8 @@ const height = width * aspectRatio;
 
 export const DRAWER_WIDTH = width * 0.8;
 
-const items = [
+const items: DrawerItemProps[] = [
   {
-    id: 1,
     icon: "zap",
     label: "Outfit Ideas",
     screen: "OutfitIdeas",
@@ -21,14 +22,12 @@ const items = [
   },
 
   {
-    id: 2,
     icon: "heart",
     label: "Favourite Outfit",
     screen: "FavouriteOutfit",
     color: "secondaryColor",
   },
   {
-    id: 3,
     icon: "user-check",
     label: "Edit",
     screen: "EditProfile",
@@ -36,7 +35,6 @@ const items = [
   },
 
   {
-    id: 6,
     icon: "clock",
     label: "Transaction History",
     screen: "TransactionHistory",
@@ -44,7 +42,6 @@ const items = [
   },
 
   {
-    id: 4,
     icon: "log-out",
     label: "Logout",
     screen: "Logout",
@@ -64,12 +61,18 @@ export default function Drawer() {
           left={0}
           backgroundColor="secondaryColor"
           borderBottomRightRadius="xl"
-        />
+        >
+          <Header
+            title="My Profile"
+            left={{ icon: "x", onPress: () => true }}
+            right={{ icon: "shopping-bag", onPress: () => true }}
+          />
+        </Box>
       </Box>
       <Box flex={0.8}>
         <Box flex={1} backgroundColor="secondaryColor" />
-        <Box flex={1} backgroundColor="primary" />
 
+        {/* 
         <Image
           style={{
             position: "absolute",
@@ -80,7 +83,7 @@ export default function Drawer() {
             right: 0,
           }}
           source={require("../../components/assets/pattern.png")}
-        />
+        /> */}
         <Box
           backgroundColor="white"
           borderTopLeftRadius="xl"
@@ -93,22 +96,39 @@ export default function Drawer() {
           justifyContent="center"
           padding="xl"
         >
+          <Box
+            style={{ borderRadius: 50 }}
+            backgroundColor="primary"
+            width={100}
+            height={100}
+            alignSelf="center"
+            position="absolute"
+            top={-50}
+            left={DRAWER_WIDTH / 2 - 50}
+          />
+          <Box marginVertical="s">
+            <Text variant="title1" textAlign="center">
+              Mike Peter
+            </Text>
+            <Text variant="body" textAlign="center">
+              mike@gmail.com
+            </Text>
+          </Box>
+
           {items.map((item) => (
-            <DrawerItem key={item.id} {...item} />
+            <DrawerItem key={item.screen} {...item} />
           ))}
         </Box>
       </Box>
 
       <Box
-        backgroundColor="white"
+        backgroundColor="secondaryColor"
         width={DRAWER_WIDTH}
-        borderBottomLeftRadius="xl"
-        borderTopRightRadius="xl"
         overflow="hidden"
-        height={height * 0.61}
-      ></Box>
+        height={height * 0.5}
+        borderTopLeftRadius="xl"
+        borderColor="white"
+      />
     </Box>
   );
 }
-
-const styles = StyleSheet.create({});

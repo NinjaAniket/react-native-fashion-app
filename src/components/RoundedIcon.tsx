@@ -38,5 +38,5 @@ export default function RoundedIcon({
 }
 
 RoundedIcon.defaultProps = {
-  iconSize: 0.7,
+  iconRatio: 0.7,
 };

@@ -5,7 +5,7 @@ import { RoundedIcon } from "../../components";
 import { RectButton } from "react-native-gesture-handler";
 import { useTheme } from "@shopify/restyle";
 
-interface DrawerItemProps {
+export interface DrawerItemProps {
   screen: string;
   icon: string;
   color: keyof Theme["colors"];
