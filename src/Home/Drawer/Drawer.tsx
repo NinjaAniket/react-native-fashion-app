@@ -1,8 +1,8 @@
+import { CommonActions } from "@react-navigation/routers";
 import React from "react";
-import { Dimensions, Image, StyleSheet } from "react-native";
-import { Header, RoundedIcon } from "../../components";
-import RoundedIconButton from "../../components/RoundedIconButton";
-import theme, { Box, Text } from "../../components/Theme";
+import { Dimensions } from "react-native";
+import { Header } from "../../components";
+import { Box, Text } from "../../components/Theme";
 import DrawerItem, { DrawerItemProps } from "./DrawerItem";
 
 const { width } = Dimensions.get("window");
@@ -63,8 +63,12 @@ export default function Drawer() {
           borderBottomRightRadius="xl"
         >
           <Header
+            dark
             title="My Profile"
-            left={{ icon: "x", onPress: () => true }}
+            left={{
+              icon: "x",
+              onPress: () => true,
+            }}
             right={{ icon: "shopping-bag", onPress: () => true }}
           />
         </Box>

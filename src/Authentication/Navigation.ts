@@ -1,9 +1,5 @@
 import { DrawerNavigationProp } from "@react-navigation/drawer";
-import {
-  CompositeNavigationProp,
-  ParamListBase,
-  RouteProp,
-} from "@react-navigation/native";
+import { CompositeNavigationProp, RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
 export interface AuthNavigationProp<
@@ -14,6 +10,11 @@ export interface AuthNavigationProp<
     DrawerNavigationProp<AppRoutes, "Home">
   >;
   route: RouteProp<AuthenticationRoutes, RouteName>;
+}
+
+export interface HomeNavigationProp<RouteName extends keyof HomeRoutes> {
+  navigation: DrawerNavigationProp<HomeRoutes, RouteName>;
+  route: RouteProp<HomeRoutes, RouteName>;
 }
 
 export type AppRoutes = {
@@ -31,4 +32,5 @@ export type AuthenticationRoutes = {
 
 export type HomeRoutes = {
   OutfitIdeas: undefined;
+  EditProfile: undefined;
 };

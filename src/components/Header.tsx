@@ -1,6 +1,4 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import RoundedIconButton from "./RoundedIconButton";
 import { Box, Text } from "./Theme";
 
@@ -10,43 +8,45 @@ interface HeaderProps {
     icon: string;
   };
   title: string;
-  right: {
-    onPress: () => void;
-    icon: string;
+  right?: {
+    onPress?: () => void;
+    icon?: string;
   };
+  dark?: boolean;
 }
 
-export default function Header({ left, right, title }: HeaderProps) {
-  const insets = useSafeAreaInsets();
-
+export default function Header({ left, right, title, dark }: HeaderProps) {
+  const color = dark ? "white" : "secondaryColor";
+  const backgroundColor = dark ? "secondaryColor" : "lightGray";
   return (
     <Box
       flexDirection="row"
       justifyContent="space-between"
+      alignItems="center"
       marginVertical="l"
       paddingHorizontal="s"
     >
       <RoundedIconButton
         name={left.icon}
-        size={24}
-        backgroundColor="secondaryColor"
-        color="white"
+        iconRatio={0.4}
+        size={44}
+        {...{ backgroundColor }}
         onPress={left.onPress}
         screen={null}
+        {...{ color }}
       />
-      <Text variant="header" color="white">
+      <Text variant="header" {...{ color }}>
         {title.toUpperCase()}
       </Text>
       <RoundedIconButton
         name={right.icon}
-        size={24}
-        backgroundColor="secondaryColor"
-        color="white"
+        size={44}
+        iconRatio={0.4}
+        {...{ backgroundColor }}
+        {...{ color }}
         onPress={right.onPress}
         screen={null}
       />
     </Box>
   );
 }
-
-const styles = StyleSheet.create({});

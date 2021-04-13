@@ -15,9 +15,10 @@ const palette = {
 
   primary: "#2cb9b0",
   body: "rgba(12, 13, 52, 0.7)",
-  lightGray: "#2cb9b0",
+  lightGray: "#FAFAFA",
   darkGrey: "#8A8D90",
   danger: "#FF0058",
+  lightBlue: "#BFEAF5",
 };
 
 const theme = {
@@ -35,6 +36,7 @@ const theme = {
     secondaryColor: palette.secondary,
     darkGrey: palette.darkGrey,
     danger: palette.danger,
+    lightBlue: palette.lightBlue,
   },
   textVariants: {
     hero: {
@@ -68,7 +70,7 @@ const theme = {
     header: {
       fontSize: 12,
       fontFamily: "OpenSans-Bold",
-      color: "secondaryColor",
+      color: "primary",
       lineHeight: 24,
     },
   },
