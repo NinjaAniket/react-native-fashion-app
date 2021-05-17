@@ -19,7 +19,6 @@ interface Tab {
 export default function Tabs({ tabs, children }: TabsProps) {
   const theme = useTheme();
   const [index, setIndex] = useState(0);
-  const selectedTab = tabs[index];
   const transition = useTransition(index);
   const translateX = mix(transition, width * 0.25, width * 0.7);
   return (
@@ -48,6 +47,7 @@ export default function Tabs({ tabs, children }: TabsProps) {
 
       <Animated.View
         style={{
+          flex: 1,
           flexDirection: "row",
           width: width * tabs.length,
           transform: [{ translateX: multiply(-width, transition) }],

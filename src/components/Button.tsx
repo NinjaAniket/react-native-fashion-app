@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { backgroundColor, color, useTheme } from "@shopify/restyle";
 import { StyleSheet } from "react-native";
-import { RectButton } from "react-native-gesture-handler";
+import { RectButton, RectButtonProperties } from "react-native-gesture-handler";
 import { Theme, Text } from "./Theme";
 
 interface ButtonProps {
@@ -9,6 +9,7 @@ interface ButtonProps {
   label?: string;
   onPress?: () => void;
   children?: ReactNode;
+  style: RectButtonProperties["style"];
 }
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
   variant,
   onPress,
   children,
+  style,
 }: ButtonProps) {
   const backgroundColor =
     variant === "primary"
@@ -27,7 +29,7 @@ export default function Button({
   const color = variant === "primary" ? "white" : "#0C0D34";
   return (
     <RectButton
-      style={[styles.container, { backgroundColor }]}
+      style={[styles.container, style, { backgroundColor }]}
       {...{ onPress }}
     >
       {children ? (
